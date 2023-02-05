@@ -15,7 +15,7 @@ pipeline {
     
     stage('Gitleaks Scan') {
       steps {
-          gitleaks detect --report-path gitleaks-report.json # This will save the report in a file called gitleaks-report.json
+          gitleaks detect --report-path gitleaks-report.json
       }
     }
     
