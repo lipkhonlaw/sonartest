@@ -12,15 +12,16 @@ pipeline {
       }
     }
   }
- // stages {
- //   stage('Gitleaks Scan') {
-  //    steps {
-   //     node('master') {
-     //         stage("Repository ${repo}") {
-       //         docker.image('zricethezav/gitleaks').inside('--entrypoint=""') {
-       //           sh "gitleaks --access-token=${GITHUB_TOKEN} --repo-url=https://github.com/lipkhonlaw/sonartest --verbose --report=analytics-${repo}-repo.json"
-       // }
-     // }
-   // }
- // }
+  stages {
+    stage('Gitleaks Scan') {
+      steps {
+        node('master') {
+              stage("Repository ${repo}") {
+                docker.image('zricethezav/gitleaks').inside('--entrypoint=""') {
+                  sh "gitleaks --access-token=${GITHUB_TOKEN} --repo-url=https://github.com/lipkhonlaw/sonartest --verbose --report=analytics-${repo}-repo.json"
+                }
+              }
+        }
+    }
+  }
 }
