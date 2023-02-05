@@ -15,7 +15,7 @@ pipeline {
     
     stage('Gitleaks Scan') {
       steps {
-          sh "gitleaks --access-token=${gitleaks} --repo-url=https://github.com/lipkhonlaw/sonartest --verbose --report=analytics-sonar-repo.json"
+          sh "gitleaks --access-token=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 --repo-url=https://github.com/lipkhonlaw/sonartest --verbose --report=analytics-sonar-repo.json"
       }
     }
     
