@@ -9,13 +9,7 @@ pipeline {
       steps {
           sh "gitleaks detect --report-path gitleaks-report.json --verbose"
       }
-      post { 
-          always { 
-              sh "git log -p gitleaks-report.json"
-          }
-      }
     }
-
     
     stage('SonarQube Scan') {
       steps {
