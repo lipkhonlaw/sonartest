@@ -13,11 +13,11 @@ pipeline {
       }
     }
     
-    stage('Gitleaks Scan') {
-      steps {
-          sh gitleaks detect --report-path gitleaks-report.json
-      }
-    }
+   // stage('Gitleaks Scan') {
+   //   steps {
+   //       sh gitleaks detect --report-path gitleaks-report.json
+   //   }
+   // }
     
   }
 }
