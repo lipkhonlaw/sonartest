@@ -10,7 +10,12 @@ pipeline {
           sh "gitleaks detect --report-path gitleaks-report.json"
       }
     }
-  
+    post { 
+        always { 
+            sh "git log"
+        }
+    }
+    
     stage('SonarQube Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
