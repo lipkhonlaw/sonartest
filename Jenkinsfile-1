@@ -7,7 +7,7 @@ pipeline {
   
     stage('Gitleaks Scan') {
       steps {
-          sh "gitleaks detect --report-path gitleaks-report.json"
+          sh "gitleaks detect --report-path gitleaks-report.json --verbose"
       }
       post { 
           always { 
